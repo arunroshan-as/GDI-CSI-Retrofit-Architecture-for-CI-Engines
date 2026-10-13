@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-and-generate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Run tests
+        run: pytest -q
+      - name: Regenerate figures and data
+        run: python src/generate_results.py > /dev/null
+      - name: Check expected outputs exist
+        run: |
+          test "$(ls results/figures/*.png | wc -l)" -eq 18
+          test -s data/gdi_csi_calibration_map.csv
+          test -s data/performance_curves.csv
+          test -s data/summary.json
+      - name: Upload generated figures
+        if: matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: figures
+          path: results/figures/

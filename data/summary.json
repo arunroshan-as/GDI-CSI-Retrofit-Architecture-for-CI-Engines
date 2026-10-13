@@ -1,0 +1,70 @@
+{
+  "engine": {
+    "displacement_L": 5.638184919471065,
+    "cylinders": 6,
+    "bore_mm": 102.0,
+    "stroke_mm": 115.0,
+    "cr_diesel": 17.5,
+    "cr_retro": 16.0
+  },
+  "torque_diesel_peak": 560.0,
+  "torque_retro_peak": 602.8399269413935,
+  "torque_retro_peak_rpm": 1400.0,
+  "torque_gain_peak_pct": 7.649986953820265,
+  "torque_gain_at_1000": 10.267138055488957,
+  "power_diesel_rated": 128.17698026646354,
+  "power_retro_rated": 130.84016536100316,
+  "power_gain_rated_pct": 2.0777405498266566,
+  "bte_peak_diesel": 37.40744549568079,
+  "bte_peak_retro": 45.05725485215916,
+  "gain_min": 15.269410280936272,
+  "gain_max": 21.486524106001827,
+  "gain_mean": 19.52106999544416,
+  "cycle": {
+    "bte_diesel": 33.68951431145708,
+    "bte_retro": 40.331179286684325,
+    "bte_gain": 19.71433875189039,
+    "nox_diesel": 6.567608286252353,
+    "nox_retro": 0.4451089536368555
+  },
+  "pk": {
+    "peak_p_diesel": 128.01704574270212,
+    "peak_p_retro": 124.89050810786686,
+    "peak_p_theta_retro": 13.5,
+    "peak_p_theta_diesel": 7.5,
+    "maxdpdtheta_retro": 7.225573907690495,
+    "maxdpdtheta_diesel": 9.937169166922942
+  },
+  "soi_range": [
+    13.7,
+    38.25
+  ],
+  "eoi_range": [
+    9.0,
+    16.7
+  ],
+  "spark_range": [
+    4.0,
+    11.7
+  ],
+  "rail_range": [
+    63.0,
+    100.0
+  ],
+  "lambda_range": [
+    1.9833333333333336,
+    6.487965152121991
+  ],
+  "dur_ms_range": [
+    0.3993055555555556,
+    1.7559523809523812
+  ],
+  "fuel_mg_range": [
+    3.4491292615168083,
+    24.408274677813584
+  ],
+  "full_load_nox_range": [
+    0.7709592087566336,
+    2.8638767968429635
+  ]
+}
